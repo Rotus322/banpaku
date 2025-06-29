@@ -3,7 +3,7 @@ import pandas as pd
 
 # CSVファイルを読み込む
 try:
-    df = pd.read_csv("万博概要.csv", encoding="utf-8", dtype=str)
+    df = pd.read_csv("banpaku.csv", encoding="utf-8", dtype=str)
 
 except Exception as e:
     st.error(f"CSVファイルの読み込みに失敗しました: {e}")

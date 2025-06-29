@@ -9,7 +9,7 @@ except Exception as e:
     st.stop()
 
 # 🔍 検索欄
-keyword = st.text_input("パビリオン名を検索（例：ポー）", "")
+keyword = st.text_input("パビリオン名を検索", "")
 
 # 🔍 部分一致で名称を検索（空欄なら全件表示）
 if keyword:
@@ -22,10 +22,8 @@ if not matched.empty:
         with st.expander(f"📍 {row['名称']}"):
             st.markdown(f"""
             - **エリア**: {row['エリア']}（{row['エリア詳細']}）  
-            - **位置**: {row['位置情報']}  
             - **入場方式**: {row['入場方式']}  
-            - **所要時間**: {row['所要時間']}  
-            - **営業時間**: {row['営業時間']}  
+            - **所要時間**: {row['所要時間']}   
             - **備考**: {row['備考']}
             """)
             if st.button(f"⏰ {row['名称']}の予約解放時刻を見る", key=idx):
